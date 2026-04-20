@@ -1,5 +1,5 @@
 ---
-// Solares y Casas - Landing Page
+// Solares y Casas - Landing Page Elegante (Inspiración Infiniti Mérida)
 ---
 
 <html lang="es">
@@ -8,107 +8,295 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Solares y Casas | Renta y Venta de Inmuebles</title>
+    <title>Solares y Casas | Renta y Venta de Inmuebles en Navojoa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --primary: #1a1a1a;
+        --accent: #d4af37; /* Dorado elegante */
+        --light: #fdfdfd;
+        --text: #333333;
+        --text-light: #666666;
+      }
+      * {
+        box-sizing: border-box;
+      }
       body {
-        font-family: system-ui, -apple-system, sans-serif;
-        background-color: #f9fafb;
-        color: #111827;
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--light);
+        color: var(--text);
         margin: 0;
         padding: 0;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      h1, h2, h3 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        margin: 0;
+      }
+      /* Header & Nav */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 1.5rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+      }
+      .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary);
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+      .logo span {
+        color: var(--accent);
+      }
+      nav a {
+        color: var(--primary);
+        text-decoration: none;
+        margin-left: 2rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: var(--accent);
+      }
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
-      }
-      header {
-        background-color: #1e3a8a; /* Azul oscuro corporativo */
-        color: white;
-        padding: 3rem 1rem;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-      }
-      h1 {
-        margin: 0;
-        font-size: 2.5rem;
-      }
-      p.subtitle {
-        font-size: 1.25rem;
-        margin-top: 0.5rem;
-        opacity: 0.9;
-      }
-      main {
-        flex: 1;
-        max-width: 800px;
-        margin: 2rem auto;
+        color: white;
         padding: 0 1rem;
       }
-      .card {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
         margin-bottom: 2rem;
       }
-      h2 {
-        color: #1e3a8a;
-        margin-top: 0;
+      .btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        transition: background 0.3s, transform 0.3s;
       }
-      ul {
-        list-style: none;
-        padding: 0;
-        font-size: 1.1rem;
+      .btn:hover {
+        background: #b5952f;
+        transform: translateY(-2px);
       }
-      li {
-        margin-bottom: 1rem;
+      /* Concept Section */
+      .section {
+        padding: 6rem 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .concept {
         display: flex;
         align-items: center;
+        gap: 4rem;
       }
-      .icon {
-        margin-right: 10px;
-        font-size: 1.2rem;
+      .concept-text {
+        flex: 1;
       }
-      footer {
-        background: #1f2937;
-        color: #9ca3af;
+      .concept-text h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+      .concept-text p {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+      }
+      .concept-img {
+        flex: 1;
+        height: 500px;
+        background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        background-size: cover;
+        background-position: center;
+        box-shadow: -20px 20px 0px var(--accent);
+      }
+      /* Services */
+      .services {
+        background: var(--primary);
+        color: white;
         text-align: center;
-        padding: 1.5rem;
-        font-size: 0.9rem;
       }
-      a {
-        color: #2563eb;
+      .services h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .service-card {
+        padding: 3rem 2rem;
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: transform 0.3s;
+      }
+      .service-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent);
+      }
+      .service-card h3 {
+        color: var(--accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .service-card p {
+        color: #cccccc;
+        font-size: 0.95rem;
+      }
+      /* Contact Section */
+      .contact {
+        text-align: center;
+      }
+      .contact h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+      .contact-item {
+        padding: 2rem;
+        background: #f4f4f4;
+      }
+      .contact-item span {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--accent);
+      }
+      .contact-item h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .contact-item p, .contact-item a {
+        color: var(--text-light);
         text-decoration: none;
       }
-      a:hover {
-        text-decoration: underline;
+      .contact-item a:hover {
+        color: var(--accent);
+      }
+      /* Footer */
+      footer {
+        background: #111;
+        color: #888;
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.85rem;
+      }
+      @media (max-width: 768px) {
+        .hero h1 { font-size: 2.5rem; }
+        .concept { flex-direction: column; }
+        .concept-img { width: 100%; box-shadow: -10px 10px 0px var(--accent); }
+        nav { display: none; }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>Solares y Casas</h1>
-      <p class="subtitle">Especialistas en renta y venta de inmuebles</p>
+      <a href="#" class="logo">Solares<span>.</span></a>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </header>
 
-    <main>
-      <div class="card">
-        <h2>Contacto y Ubicación</h2>
-        <p>Estamos a tus órdenes para ayudarte a encontrar la propiedad ideal o vender/rentar la tuya.</p>
-        
-        <ul>
-          <li>
-            <span class="icon">📍</span>
-            <span><strong>Oficina:</strong> Calle Jiménez 206 altos, Col. Juárez, C.P. 85870.<br>Navojoa, Sonora.</span>
-          </li>
-          <li>
-            <span class="icon">📞</span>
-            <span><strong>Teléfono:</strong> <a href="tel:+526421051742">642 105 1742</a></span>
-          </li>
-          <li>
-            <span class="icon">✉️</span>
-            <span><strong>Correo:</strong> <a href="mailto:lic_francisco@hotmail.com">lic_francisco@hotmail.com</a></span>
-          </li>
-        </ul>
+    <section id="inicio" class="hero">
+      <h1>Solares y Casas</h1>
+      <p>Exclusividad y confianza en inmuebles</p>
+      <a href="#contacto" class="btn">Contáctanos</a>
+    </section>
+
+    <section id="nosotros" class="section concept">
+      <div class="concept-text">
+        <h2>Redefiniendo tu espacio</h2>
+        <p>En Solares y Casas nos dedicamos a ofrecer las mejores opciones de bienes raíces en Navojoa, Sonora. Entendemos que buscar un nuevo hogar o el lugar perfecto para tu negocio es una de las decisiones más importantes.</p>
+        <p>Nuestro compromiso es brindarte un servicio personalizado, profesional y transparente en cada paso de tu compra, venta o arrendamiento.</p>
       </div>
-    </main>
+      <div class="concept-img"></div>
+    </section>
+
+    <section id="servicios" class="section services">
+      <h2>Nuestros Servicios</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Venta de Inmuebles</h3>
+          <p>Encuentra el hogar de tus sueños o el terreno ideal para tu próximo gran proyecto con nuestra cartera exclusiva de propiedades.</p>
+        </div>
+        <div class="service-card">
+          <h3>Renta de Espacios</h3>
+          <p>Opciones residenciales y comerciales adaptadas a tus necesidades, ubicadas en las mejores zonas de la ciudad.</p>
+        </div>
+        <div class="service-card">
+          <h3>Asesoría Integral</h3>
+          <p>Te acompañamos durante todo el proceso legal y administrativo para que tu inversión esté siempre segura y protegida.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section contact">
+      <h2>Estamos a tus órdenes</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span>📍</span>
+          <h3>Ubicación</h3>
+          <p>Calle Jiménez 206 altos, Col. Juárez<br>C.P. 85870. Navojoa, Sonora.</p>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <h3>Teléfono</h3>
+          <a href="tel:+526421051742">642 105 1742</a>
+        </div>
+        <div class="contact-item">
+          <span>✉️</span>
+          <h3>Correo Electrónico</h3>
+          <a href="mailto:lic_francisco@hotmail.com">lic_francisco@hotmail.com</a>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <p>&copy; {new Date().getFullYear()} Solares y Casas. Todos los derechos reservados.</p>
