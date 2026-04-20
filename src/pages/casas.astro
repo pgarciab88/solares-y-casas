@@ -219,9 +219,11 @@
         overflow: hidden;
         border-radius: 8px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: height 0.4s ease-in-out;
       }
       .slides {
         display: flex;
+        align-items: flex-start;
         transition: transform 0.5s ease-in-out;
       }
       .slide {
@@ -355,7 +357,7 @@
     <section id="casas" class="section casas" style="padding-top: 10rem;">
       <h2>Casas en Venta</h2>
       <div class="casa-destacada">
-        <div class="slider-container">
+        <div class="slider-container" id="slider-container">
           <div class="slides" id="slides">
             <div class="slide"><img src="/solares-y-casas/casa-en-venta/22.jpg" alt="Casa en venta"></div>
             <div class="slide"><img src="/solares-y-casas/casa-en-venta/01.jpg" alt="Casa en venta"></div>
@@ -431,6 +433,18 @@
       });
       
       let slideIndex = 0;
+      
+      function updateSliderHeight() {
+        const container = document.getElementById('slider-container');
+        const slidesList = document.querySelectorAll('.slide');
+        if (container && slidesList[slideIndex]) {
+          const img = slidesList[slideIndex].querySelector('img');
+          if (img && img.clientHeight > 0) {
+            container.style.height = img.clientHeight + 'px';
+          }
+        }
+      }
+
       function moveSlide(n) {
         const slides = document.getElementById('slides');
         const totalSlides = document.querySelectorAll('.slide').length;
@@ -440,7 +454,11 @@
         if (slideIndex < 0) slideIndex = totalSlides - 1;
         
         slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+        updateSliderHeight();
       }
+
+      window.addEventListener('load', updateSliderHeight);
+      window.addEventListener('resize', updateSliderHeight);
     </script>
   </body>
 </html>
