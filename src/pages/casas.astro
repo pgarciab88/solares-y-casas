@@ -304,7 +304,7 @@
   </head>
   <body>
     <header>
-      <a href="#" class="logo">Solares y Casas<span>.</span></a>
+      <a href="/solares-y-casas/" class="logo">Solares y Casas<span>.</span></a>
       <nav>
         <a href="/solares-y-casas/#inicio">Inicio</a>
         <a href="/solares-y-casas/#nosotros">Nosotros</a>
@@ -314,35 +314,41 @@
       </nav>
     </header>
 
-    <section id="inicio" class="hero">
-      <h1>Solares y Casas</h1>
-      <p>Tu próximo hogar en la Perla del Mayo</p>
-      <a href="#contacto" class="btn">Contáctanos</a>
-    </section>
-
-    <section id="nosotros" class="section concept">
-      <div class="concept-text">
-        <h2>Cerca de ti y los tuyos</h2>
-        <p>En Solares y Casas somos orgullosamente del Valle del Mayo. Estamos aquí para ayudarte a encontrar el hogar o terreno ideal en Navojoa y sus alrededores, porque sabemos lo importante que es tener un lugar propio.</p>
-        <p>Nuestro compromiso es darte un trato amable, claro y directo. Te acompañamos paso a paso para que comprar, vender o rentar sea seguro y sin complicaciones.</p>
-      </div>
-      <div class="concept-img"></div>
-    </section>
-
-    <section id="servicios" class="section services">
-      <h2>Nuestros Servicios</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Venta de Casas y Terrenos</h3>
-          <p>Encuentra el hogar ideal para tu familia o el terreno perfecto para empezar a construir. Tenemos opciones para todos los presupuestos.</p>
+    <section id="casas" class="section casas" style="padding-top: 10rem;">
+      <h2>Casas en Venta</h2>
+      <div class="casa-destacada">
+        <div class="slider-container">
+          <div class="slides" id="slides">
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/22.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/01.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/02.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/03.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/04.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/05.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/06.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/07.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/08.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/09.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/10.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/11.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/12.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/13.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/14.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/15.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/16.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/17.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/18.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/19.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/20.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/21.jpg" alt="Casa en venta"></div>
+            <div class="slide"><img src="/solares-y-casas/casa-en-venta/23.jpg" alt="Casa en venta"></div>
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-        <div class="service-card">
-          <h3>Renta de Espacios</h3>
-          <p>Casas, departamentos y locales a tu medida. Opciones prácticas y bien ubicadas para que vivas o trabajes a gusto.</p>
-        </div>
-        <div class="service-card">
-          <h3>Asesoría de Confianza</h3>
-          <p>Te ayudamos con todo el papeleo y los trámites de forma sencilla. Tú relájate, nosotros nos encargamos de que todo salga bien.</p>
+        <div class="casa-info">
+          <strong>Hermosa Residencia en Colonia Reforma</strong>
+          <p>Amplios espacios, cocina integral, acabados de lujo y excelente ubicación.</p>
         </div>
       </div>
     </section>
@@ -371,5 +377,19 @@
     <footer>
       <p>&copy; {new Date().getFullYear()} Solares y Casas Navojoa. Todos los derechos reservados.</p>
     </footer>
+
+    <script is:inline>
+      let slideIndex = 0;
+      function moveSlide(n) {
+        const slides = document.getElementById('slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+        slideIndex += n;
+        
+        if (slideIndex >= totalSlides) slideIndex = 0;
+        if (slideIndex < 0) slideIndex = totalSlides - 1;
+        
+        slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+      }
+    </script>
   </body>
 </html>
