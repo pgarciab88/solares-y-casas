@@ -1,5 +1,5 @@
 ---
-// Solares y Casas - Landing Page Elegante (Inspiración Infiniti Mérida)
+// Solares y Casas - Landing Page Elegante (Identidad Navojoa / Valle del Mayo)
 ---
 
 <html lang="es">
@@ -8,15 +8,18 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Solares y Casas | Renta y Venta de Inmuebles en Navojoa</title>
+    <title>Solares y Casas | Inmuebles en Navojoa</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
       :root {
-        --primary: #1a1a1a;
-        --accent: #d4af37; /* Dorado elegante */
-        --light: #fdfdfd;
+        /* Paleta inspirada en Navojoa, el Valle del Mayo y sus atardeceres */
+        --primary: #2C3539;     /* Gris profundo para mantener la elegancia y contraste */
+        --accent: #B05333;      /* Rojo Terracota / Adobe - representativo de la tierra sonorense */
+        --accent-hover: #8D4127;
+        --light: #F9F6F0;       /* Blanco cálido tipo estuco / arena */
         --text: #333333;
         --text-light: #666666;
+        --dark-bg: #212628;     /* Fondo oscuro con un toque terroso */
       }
       * {
         box-sizing: border-box;
@@ -45,7 +48,7 @@
         justify-content: space-between;
         align-items: center;
         z-index: 1000;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(249, 246, 240, 0.95);
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         transition: all 0.3s ease;
       }
@@ -75,7 +78,8 @@
       /* Hero Section */
       .hero {
         height: 100vh;
-        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        /* Imagen de casa con tonos cálidos y luz de atardecer */
+        background-image: linear-gradient(rgba(44, 53, 57, 0.6), rgba(44, 53, 57, 0.7)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -111,7 +115,7 @@
         transition: background 0.3s, transform 0.3s;
       }
       .btn:hover {
-        background: #b5952f;
+        background: var(--accent-hover);
         transform: translateY(-2px);
       }
       /* Concept Section */
@@ -141,20 +145,22 @@
       .concept-img {
         flex: 1;
         height: 500px;
-        background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        /* Imagen con texturas cálidas/hogareñas */
+        background-image: url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
         background-size: cover;
         background-position: center;
         box-shadow: -20px 20px 0px var(--accent);
       }
       /* Services */
       .services {
-        background: var(--primary);
-        color: white;
+        background: var(--dark-bg);
+        color: var(--light);
         text-align: center;
       }
       .services h2 {
         font-size: 2.5rem;
         margin-bottom: 3rem;
+        color: var(--light);
       }
       .services-grid {
         display: grid;
@@ -165,8 +171,9 @@
       }
       .service-card {
         padding: 3rem 2rem;
-        border: 1px solid rgba(255,255,255,0.1);
-        transition: transform 0.3s;
+        border: 1px solid rgba(255,255,255,0.05);
+        background: rgba(255,255,255,0.02);
+        transition: transform 0.3s, border-color 0.3s;
       }
       .service-card:hover {
         transform: translateY(-10px);
@@ -178,7 +185,7 @@
         margin-bottom: 1rem;
       }
       .service-card p {
-        color: #cccccc;
+        color: #d1d1d1;
         font-size: 0.95rem;
       }
       /* Contact Section */
@@ -188,6 +195,7 @@
       .contact h2 {
         font-size: 2.5rem;
         margin-bottom: 3rem;
+        color: var(--primary);
       }
       .contact-grid {
         display: grid;
@@ -196,13 +204,14 @@
       }
       .contact-item {
         padding: 2rem;
-        background: #f4f4f4;
+        background: #F0EDE6; /* Tono arena suave */
+        border-bottom: 3px solid var(--accent);
       }
       .contact-item span {
         display: block;
         font-size: 2rem;
         margin-bottom: 1rem;
-        color: var(--accent);
+        color: var(--primary);
       }
       .contact-item h3 {
         font-family: 'Montserrat', sans-serif;
@@ -219,7 +228,7 @@
       }
       /* Footer */
       footer {
-        background: #111;
+        background: #1A1E20;
         color: #888;
         text-align: center;
         padding: 2rem;
@@ -246,15 +255,15 @@
 
     <section id="inicio" class="hero">
       <h1>Solares y Casas</h1>
-      <p>Exclusividad y confianza en inmuebles</p>
+      <p>Tradición y exclusividad en la Perla del Mayo</p>
       <a href="#contacto" class="btn">Contáctanos</a>
     </section>
 
     <section id="nosotros" class="section concept">
       <div class="concept-text">
-        <h2>Redefiniendo tu espacio</h2>
-        <p>En Solares y Casas nos dedicamos a ofrecer las mejores opciones de bienes raíces en Navojoa, Sonora. Entendemos que buscar un nuevo hogar o el lugar perfecto para tu negocio es una de las decisiones más importantes.</p>
-        <p>Nuestro compromiso es brindarte un servicio personalizado, profesional y transparente en cada paso de tu compra, venta o arrendamiento.</p>
+        <h2>Raíces en nuestra tierra</h2>
+        <p>En Solares y Casas nos enorgullece ser parte del Valle del Mayo, ofreciendo las mejores opciones de bienes raíces en Navojoa y la región. Conocemos el valor de nuestra tierra y la importancia de encontrar el lugar perfecto.</p>
+        <p>Nuestro compromiso es brindarte un servicio con la calidez sonorense, profesionalismo y transparencia en cada paso de tu compra, venta o arrendamiento.</p>
       </div>
       <div class="concept-img"></div>
     </section>
@@ -264,15 +273,15 @@
       <div class="services-grid">
         <div class="service-card">
           <h3>Venta de Inmuebles</h3>
-          <p>Encuentra el hogar de tus sueños o el terreno ideal para tu próximo gran proyecto con nuestra cartera exclusiva de propiedades.</p>
+          <p>Encuentra el hogar ideal para tu familia o el terreno perfecto para tu próximo gran proyecto con nuestra cartera exclusiva de propiedades.</p>
         </div>
         <div class="service-card">
           <h3>Renta de Espacios</h3>
-          <p>Opciones residenciales y comerciales adaptadas a tus necesidades, ubicadas en las mejores zonas de la ciudad.</p>
+          <p>Opciones residenciales y comerciales adaptadas a tus necesidades, ubicadas en las zonas con mayor proyección de la ciudad.</p>
         </div>
         <div class="service-card">
           <h3>Asesoría Integral</h3>
-          <p>Te acompañamos durante todo el proceso legal y administrativo para que tu inversión esté siempre segura y protegida.</p>
+          <p>Te acompañamos durante todo el proceso legal y administrativo para que tu patrimonio y tu inversión estén siempre seguros.</p>
         </div>
       </div>
     </section>
@@ -299,7 +308,7 @@
     </section>
 
     <footer>
-      <p>&copy; {new Date().getFullYear()} Solares y Casas. Todos los derechos reservados.</p>
+      <p>&copy; {new Date().getFullYear()} Solares y Casas Navojoa. Todos los derechos reservados.</p>
     </footer>
   </body>
 </html>
